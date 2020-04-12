@@ -1,0 +1,14 @@
+{
+	"name": "config-code-style",
+	"scripts": {
+		"eslint": "eslint -f codeframe './src/**/*.{js,jsx}'"
+	},
+	"pre-commit": [
+		"eslint"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"pre-commit": "^1.2.2"
+	}
+}
