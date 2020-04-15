@@ -1,10 +1,12 @@
 {
 	"name": "config-code-style",
 	"scripts": {
-		"eslint": "eslint -f codeframe './src/**/*.{js,jsx}'"
+		"eslint": "eslint -f codeframe './src/**/*.{js,jsx}'",
+		"prettier": "prettier --check './src/**/*.scss'"
 	},
 	"pre-commit": [
-		"eslint"
+		"eslint",
+		"prettier"
 	],
 	"dependencies": {},
 	"devDependencies": {
@@ -12,8 +14,10 @@
 		"eslint": "^6.8.0",
 		"eslint-plugin-babel": "^5.3.0",
 		"eslint-plugin-import": "^2.20.2",
+		"eslint-plugin-json": "^2.1.1",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-react": "^7.19.0",
-		"pre-commit": "^1.2.2"
+		"pre-commit": "^1.2.2",
+		"prettier": "^2.0.4"
 	}
 }
