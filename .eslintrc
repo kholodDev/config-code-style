@@ -3,10 +3,9 @@
 		"eslint:recommended",
 		"plugin:import/errors",
 		"plugin:jsx-a11y/strict",
-		"plugin:react/all",
 		"plugin:json/recommended-with-comments"
 	],
-	"plugins": ["babel", "import", "jsx-a11y", "react", "json"],
+	"plugins": ["babel", "import", "jsx-a11y", "react", "json", "prettier"],
 	"parser": "babel-eslint",
 	"parserOptions": {
 		"ecmaVersion": 11,
@@ -21,13 +20,18 @@
 		"es6": true,
 		"es2017": true,
 		"es2020": true,
+		"node": true,
 		"jest": false,
 		"worker": false,
 		"serviceworker": false,
-		"node": false,
 		"mongo": false,
 		"amd": false,
 		"shared-node-browser": false
+	},
+	"settings": {
+		"react": {
+			"version": "16.3"
+		}
 	},
 	"globals": {},
 	"rules": {
@@ -47,14 +51,188 @@
 		"max-nested-callbacks": ["error", 3],
 		"max-params": ["error", 3],
 		"max-statements": ["error", 5],
-		"max-lines": ["error", 100],
+		"max-lines": ["error", 200],
 		"semi": ["error", "never"],
 		"no-console": "error",
 		"no-var": "error",
 		"prefer-const": "error",
 		"eol-last": ["error", "always"],
 
-		// React
-		"react/function-component-definition": ["error", { "namedComponents": "arrow-function" }]
+		/* */
+		/* */
+		/* */
+		/* Prettier plugin */
+		"prettier/prettier": ["off", {}, { "usePrettierrc": true }],
+		"linebreak-style": "off",
+		"lines-between-class-members": "off",
+		"arrow-parens": "off",
+		"object-curly-newline": "off",
+		"no-mixed-operators": "off",
+		"function-paren-newline": "off",
+		"space-before-function-paren": 0,
+
+		/* */
+		/* */
+		/* */
+		/* React plugin */
+		"react/boolean-prop-naming": "off",
+		"react/button-has-type": "warn",
+		"react/default-props-match-prop-types": [
+			"error",
+			{
+				"allowRequiredDefaults": true
+			}
+		],
+		"react/destructuring-assignment": "off",
+		"react/display-name": "off",
+		"react/forbid-component-props": "off",
+		"react/forbid-dom-props": "off",
+		"react/forbid-elements": "off",
+		"react/forbid-foreign-prop-types": "off",
+		"react/forbid-prop-types": "off",
+		"react/function-component-definition": [
+			"error",
+			{
+				"namedComponents": "arrow-function"
+			}
+		],
+		"react/no-access-state-in-setstate": "error",
+		"react/no-adjacent-inline-elements": "off",
+		"react/no-array-index-key": "warn",
+		"react/no-children-prop": "error",
+		"react/no-danger": "error",
+		"react/no-danger-with-children": "error",
+		"react/no-deprecated": "error",
+		"react/no-did-mount-set-state": "error",
+		"react/no-did-update-set-state": "error",
+		"react/no-direct-mutation-state": "error",
+		"react/no-find-dom-node": "error",
+		"react/no-is-mounted": "error",
+		"react/no-multi-comp": "error",
+		"react/no-redundant-should-component-update": "error",
+		"react/no-render-return-value": "error",
+		"react/no-set-state": "error",
+		"react/no-string-refs": "error",
+		"react/no-this-in-sfc": "error",
+		"react/no-typos": "error",
+		"react/no-unescaped-entities": "error",
+		"react/no-unknown-property": "error",
+		"react/no-unsafe": "error",
+		"react/no-unused-prop-types": "error",
+		"react/no-unused-state": "error",
+		"react/no-will-update-set-state": "error",
+		"react/prefer-es6-class": ["error", "always"],
+		"react/prefer-read-only-props": "error",
+		"react/prefer-stateless-function": "error",
+		"react/prop-types": "error",
+		"react/react-in-jsx-scope": "error",
+		"react/require-default-props": [
+			"error",
+			{
+				"forbidDefaultForRequired": true,
+				"ignoreFunctionalComponents": false
+			}
+		],
+		"react/require-optimization": "error",
+		"react/require-render-return": "error",
+		"react/self-closing-comp": "off",
+		"react/sort-comp": "off",
+		"react/sort-prop-types": "off",
+		"react/static-property-placement": "off",
+		"react/style-prop-object": "error",
+		"react/void-dom-elements-no-children": "error",
+		/* React class specific */
+		"react/state-in-constructor": ["error", "never"],
+		/* React jsx */
+		"react/jsx-boolean-value": ["error", "never"],
+		"react/jsx-child-element-spacing": "off",
+		"react/jsx-closing-bracket-location": ["error", "tag-aligned"],
+		"react/jsx-closing-tag-location": "error",
+		"react/jsx-curly-brace-presence": [
+			"error",
+			{
+				"props": "never",
+				"children": "never"
+			}
+		],
+		"react/jsx-curly-newline": [
+			"error",
+			{
+				"multiline": "forbid",
+				"singleline": "forbid"
+			}
+		],
+		"react/jsx-curly-spacing": [
+			"error",
+			{
+				"when": "never",
+				"children": {
+					"when": "never"
+				}
+			}
+		],
+		"react/jsx-equals-spacing": ["error", "never"],
+		"react/jsx-filename-extension": "off",
+		"react/jsx-first-prop-new-line": ["error", "multiline"],
+		"react/jsx-fragments": ["error", "syntax"],
+		"react/jsx-handler-names": "off",
+		"react/jsx-indent": ["error", "tab"],
+		"react/jsx-indent-props": ["error", "tab"],
+		"react/jsx-key": "off",
+		"react/jsx-max-depth": [
+			"error",
+			{
+				"max": 5
+			}
+		],
+		"react/jsx-max-props-per-line": [
+			"error",
+			{
+				"maximum": 3
+			}
+		],
+		"react/jsx-no-bind": "error",
+		"react/jsx-no-comment-textnodes": "error",
+		"react/jsx-no-duplicate-props": "error",
+		"react/jsx-no-literals": "off",
+		"react/jsx-no-script-url": "error",
+		"react/jsx-no-target-blank": "off",
+		"react/jsx-no-undef": [
+			"error",
+			{
+				"allowGlobals": true
+			}
+		],
+		"react/jsx-no-useless-fragment": "error",
+		"react/jsx-one-expression-per-line": "error",
+		"react/jsx-pascal-case": "error",
+		"react/jsx-props-no-multi-spaces": "error",
+		"react/jsx-props-no-spreading": "warn",
+		"react/jsx-sort-default-props": "off",
+		"react/jsx-sort-props": "off",
+		"react/jsx-space-before-closing": ["error", "always"],
+		"react/jsx-tag-spacing": [
+			"error",
+			{
+				"closingSlash": "never",
+				"beforeSelfClosing": "always",
+				"afterOpening": "never",
+				"beforeClosing": "never"
+			}
+		],
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"react/jsx-wrap-multilines": [
+			"error",
+			{
+				"declaration": "parens-new-line",
+				"assignment": "parens-new-line",
+				"return": "parens-new-line",
+				"arrow": "parens-new-line",
+				"condition": "parens-new-line",
+				"logical": "parens-new-line",
+				"prop": "parens-new-line"
+			}
+		]
 	}
 }
